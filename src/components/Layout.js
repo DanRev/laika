@@ -1,7 +1,19 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import {FormControl, NativeSelect} from '@mui/material';
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import './styles/Layout.scss';
+
+function onClickItem(itemNumber) {
+  var items = document.getElementsByClassName('HeaderLayout__subItem');
+  Object.values(items).forEach((element)=>{
+    if(element.classList.contains("HeaderLayout__selected")){
+      element.classList.remove("HeaderLayout__selected");
+    }
+  })
+  items[itemNumber].classList.add("HeaderLayout__selected");
+}
 
 function Layout() {
   return (
@@ -27,30 +39,51 @@ function Layout() {
           <div className="HeaderLayout__containerLower">
             <Link className="HeaderLayout__link" to="/">
               <img src="https://laika.com.co/assets/home/LaikaMascotas.svg" alt="Mascota_Laika" />
+              <span className="HeaderLayout__linkName">Laika</span>
             </Link>
             <input className="HeaderLayout__InputText" type="text" placeholder="¿Qu&eacute; necesita tu mascota?"/>
-          </div>
-          <div>
-            <div className="HeaderLayout_selectContainer">
+            <div className="HeaderLayout__selectContainer">
               <img src="https://laikapp.s3.amazonaws.com/general/avatar_col.png" alt="Bandera Colombia" />
-              <select name="" id="" className='HeaderLayout__select' label="Hola">
-                <option disabled selected className="HeaderLayout__selectedDisable">BOG</option>
-                <option value=""></option>
+              <select className='HeaderLayout__select'>
+                <option disabled selected className="HeaderLayout__selectedDisable" value='BOG'>BOG</option>
               </select>
+            </div>            
+          </div>
+          <div className='HeaderLayout__accountLog'>
+            <div className='HeaderLayout__accountIcon'>
+              <PersonOutlineIcon/>
+              <span className="HeaderLayout__accountText">Mi Cuenta</span>
             </div>
-            {/* <FormControl sx={{ m: 1 }} variant="standard">
-              <NativeSelect
-                id="demo-customized-select-native"
-                label="Customized"
-              >
-                <option aria-label="None" value="" />
-                <option value={10}></option>
-                <option value={20}></option>
-                <option value={30}></option>
-              </NativeSelect>
-            </FormControl> */}
+            <div className="HeaderLayout__shoppingCartContainer">
+              <ShoppingCartIcon className="HeaderLayout__shoppingCart"/>
+              <span className="HeaderLayout__shoppingCartText">0</span>
+            </div>
           </div>
         </div>
+      </div>
+      <div className="HeaderLayout__subMenu">
+        <div className="HeaderLayout__subItem" onClick={()=>{onClickItem(0)}}>
+          <img src="https://laika.com.co/assets/home/dog_mc.svg" alt="perro" />
+          <span className="HeaderLayout__subItemText">Compra para perro</span>
+          <KeyboardArrowRightIcon/>
+        </div>
+        <div className="HeaderLayout__subItem" onClick={()=>{onClickItem(1)}}>
+          <img src="https://laika.com.co/assets/home/cat_mc_s.svg" alt="gato" />
+          <span className="HeaderLayout__subItemText">Compra para gato</span>
+          <KeyboardArrowRightIcon/>
+        </div>
+        <div className="HeaderLayout__subItem" onClick={()=>{onClickItem(2)}}>
+          <span className="HeaderLayout__subItemText">Ofertas</span>
+          <KeyboardArrowRightIcon/>
+        </div>
+        <div className="HeaderLayout__subItem" onClick={()=>{onClickItem(3)}}>
+          <span className="HeaderLayout__subItemText">Servicios</span>
+          <KeyboardArrowRightIcon/>
+        </div>
+        <div className="HeaderLayout__subItem" onClick={()=>{onClickItem(4)}}>
+          <span className="HeaderLayout__subItemText">Blog</span>
+        </div>        
+        <span className="HeaderLayout__textMember">Laika <span id='HeaderLayout__textMemberSecond' className="HeaderLayout__textMemberSecond">Member</span> <div className="HeaderLayout__btn">Adqui&eacute;rela Ya</div></span>
       </div>
     </div>
   )

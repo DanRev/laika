@@ -1,0 +1,52 @@
+@import './Globals.scss';
+
+.Home{
+  &__carousel{
+    position: relative;
+    margin: auto;
+    &Controller{
+      display: flex;
+      height: 15px;
+      justify-content: center;
+    }
+    &Dot{
+      height: 15px;
+      cursor: pointer;
+      width: 15px;
+      transition: background-color 0.6s ease;
+      border-radius: 50%;
+      background-color: $color-carouselNotSelected;
+      margin-right: 4px;
+    }
+    &Selected{
+      background-color: $color-carouselSelected;
+    }
+  }
+  &__subItemCarousel{
+    display: none;
+    img{
+      width: 100%;
+    }
+  }
+}
+
+.active {
+  background-color: $color-carouselSelected;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}

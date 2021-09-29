@@ -3,10 +3,10 @@
 .HeaderLayout{
   background-color: $color-primary;
   width: 100%;
-  padding-bottom: 1em;
   &__container{
     margin-left: 10em;
     margin-right: 10em;
+    padding-bottom: 1em;
   }
   &__Upper{
     display: flex;
@@ -42,7 +42,7 @@
     border-radius: 5px;
     border: 0;
     border-color: transparent;
-    margin-left: 5em;
+    margin-left: 2em;
     margin-top: 0.5em;
     height: 3em;
     padding: 1em;
@@ -66,15 +66,87 @@
     font-family: 'SemiBoldOblique';
     font-size:  15px;
   }
-  &_containerLower{
+  &__containerLower{
     display: flex;
+    align-items: center;
   }
   &__selectContainer{
     display: flex;
+    height: 2em;
+    margin-top: 8px;
+    margin-left: 1em;
+    align-items: center;
+    cursor: pointer;
     img{
       height: 1.5em;
       margin-right: 8px;
     }
+    select{
+      vertical-align: middle;
+      cursor: pointer;
+    }
+  }
+  &__link{
+    display: flex;
+    flex-direction: column;
+  }
+  &__accountLog{
+    display: flex;
+    color: white;
+    cursor: pointer;
+  }
+  &__accountIcon{
+    display: flex;
+    align-items: center;
+    margin-right: 2em;
+    cursor: pointer;
+  }
+  &__shoppingCartContainer{
+    display: flex;
+    cursor: pointer;
+  }
+  &__shoppingCartText{
+    background-color: red;
+    padding: 0;
+    height: 1.5em;
+    width: 1.5em;
+    text-align: center;
+    transform: scale(1) translate(-36%, -60%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+  }
+  &__subMenu{
+    display: flex;
+    background-color: white;
+    justify-content: space-evenly;
+    padding-top: 1em;
+    span{
+      color: $color-primary !important;
+      font-family: 'SemiBoldOblique' !important;
+      font-size:1em !important;
+    }
+  }
+  &__subItem{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  &__textMember{
+    display: flex;
+    align-items: center;
+    &Second{
+      padding-right: 0.5em;
+    }
+  }
+  &__btn{
+    display: flex;
+    border-radius: 5px;
+    background: $color-memberBtn;
+    height: 2em;
+    align-items: center;
+    width: 8em;
+    justify-content: center;
   }
   p{
     margin: 0;
@@ -87,5 +159,15 @@
     font-family: 'ExtraBoldOblique';
     font-size: 14px;
     color: white;
+  }
+  &__selected{
+    border-bottom: 1px solid $color-primary;
+    padding-bottom: 3px;
+  }
+}
+
+#HeaderLayout{
+  &__textMemberSecond{
+    color: $color-member !important;
   }
 }
