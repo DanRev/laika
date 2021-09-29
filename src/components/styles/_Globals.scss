@@ -1,0 +1,19 @@
+$color-primary: #603E85;
+
+@font-face {
+  font-family: 'ExtraBoldOblique';
+  src: url(../../resources/Causten-ExtraBoldOblique.otf);
+}
+
+@font-face {
+  font-family: 'SemiBoldOblique';
+  src: url(../../resources/Causten-SemiBoldOblique.otf);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+}

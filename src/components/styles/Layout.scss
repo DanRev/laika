@@ -1,0 +1,91 @@
+@import './Globals.scss';
+
+.HeaderLayout{
+  background-color: $color-primary;
+  width: 100%;
+  padding-bottom: 1em;
+  &__container{
+    margin-left: 10em;
+    margin-right: 10em;
+  }
+  &__Upper{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+  }
+  &__TextLeft{
+    display: flex;
+    &--LeftBar{
+      font-family: "Times New Roman" !important;
+      margin-right: 1em;
+    }
+  }
+  &__TextRight{
+    display: flex;
+    font-family: 'SemiBoldOblique';
+    color: white;
+    p{
+      margin-right: 1em !important;
+    }
+  }
+  &__SocialNetworks{
+    img{
+      cursor: pointer;
+    }
+  }
+  &__Lower{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__InputText{
+    border-radius: 5px;
+    border: 0;
+    border-color: transparent;
+    margin-left: 5em;
+    margin-top: 0.5em;
+    height: 3em;
+    padding: 1em;
+    width: 78em;
+    padding-left: 35px;
+    background-image: url(https://laika.com.co/assets/home/search_icon_mc.svg);
+    background-repeat: no-repeat;
+    background-position: 6px;
+    font-family: 'SemiBoldOblique';
+  }
+  &__InputText::placeholder{
+    color: #BABABA; 
+  }
+  &__select{
+    width: 5em;
+    background: transparent;
+    border: none;
+    /* margin-top: 1em; */
+    height: 2em;
+    color: white;
+    font-family: 'SemiBoldOblique';
+    font-size:  15px;
+  }
+  &_containerLower{
+    display: flex;
+  }
+  &__selectContainer{
+    display: flex;
+    img{
+      height: 1.5em;
+      margin-right: 8px;
+    }
+  }
+  p{
+    margin: 0;
+  }
+  img{
+    vertical-align: middle;
+  }
+  span{
+    padding-left: 0.5em;
+    font-family: 'ExtraBoldOblique';
+    font-size: 14px;
+    color: white;
+  }
+}
