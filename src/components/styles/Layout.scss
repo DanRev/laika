@@ -3,6 +3,9 @@
 .HeaderLayout{
   background-color: $color-primary;
   width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
   &__container{
     margin-left: 10em;
     margin-right: 10em;
@@ -46,7 +49,7 @@
     margin-top: 0.5em;
     height: 3em;
     padding: 1em;
-    width: 78em;
+    width: 40em;
     padding-left: 35px;
     background-image: url(https://laika.com.co/assets/home/search_icon_mc.svg);
     background-repeat: no-repeat;
@@ -164,10 +167,106 @@
     border-bottom: 1px solid $color-primary;
     padding-bottom: 3px;
   }
+
+  @media (max-width: 1024px) {
+    &__container {
+      margin-left: 2em;
+      margin-right: 2em;
+      padding-bottom: 1em;
+      &Lower{
+        margin-right: 5em;
+      }
+    }
+    &__Upper {
+      justify-content: initial;
+      flex-direction: column;
+      align-items: center;
+    }
+    &__Lower{
+      justify-content: initial;
+      margin: inherit;
+    }
+    &__TextRight{
+      margin-left: 3em;
+      align-items: center;
+    }
+    &__InputText{
+      width: 30em;
+    }
+    &__subMenu{
+      justify-content: flex-start;
+      padding: 1em 5em;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__container {
+      &Lower{
+        margin-right: 2em;
+      }
+    }
+    &__InputText {
+      width: 20em;
+    }
+    &__subMenu {
+      font-size: 0.8em;
+    }
+  }
+
+  @media (max-width: 425px) {
+    &__subMenu {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+    }
+    &__subItem {
+      margin-bottom: 0.5em;
+    }
+
+    &__TextRight{
+      display: none;
+    }
+    &__TextLeft{
+      flex-direction: column;
+      align-items: center;
+    }
+    &__Lower{
+      flex-direction: column;
+    }
+    &__containerLower{
+      margin-right: 0;
+      flex-direction: column;
+    }
+    &__container{
+      svg{
+        color: white;
+      }
+    }
+  }
 }
 
 #HeaderLayout{
   &__textMemberSecond{
     color: $color-member !important;
   }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $color-primary;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $color-carouselSelected;
 }

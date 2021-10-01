@@ -1,0 +1,127 @@
+@import './Globals.scss';
+
+.Footer{
+  &__Container{
+    display: flex;
+    justify-content: center;
+    margin-top: 5em;
+    &SubItem{
+      margin-right: 4em;
+      &Icons{
+        cursor: pointer;
+        &Prettier{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: $color-icons;
+        }
+      }
+    }
+  }
+  &__Input{
+    border-radius: 5px;
+    border: 1px solid;
+    border-color: $color-primary;
+    margin-top: 0.5em;
+    height: 3em;
+    padding: 1em;
+    width: 15em;
+    padding-left: 35px;
+    font-family: 'SemiBoldOblique';
+  }
+  &__Input::placeholder{
+    color: $color-primary;
+  }
+  &__titleList{
+    color: $color-primary;
+    font-size: 2em;
+    font-weight: bold;
+    font-family: 'SemiBoldOblique';
+    &-low{
+      margin-top: 0.5em;
+      font-family: "SemiBoldOblique";
+      font-size: 0.7em;
+      width: 15em;
+      color: $color-primary;
+    }
+  }
+  &__Checkbox{
+    &Container{
+      width: 15em;
+      display: flex;
+      margin-top: 0.4em;
+    }
+    &Label{
+      font-family: "SemiBoldOblique";
+      font-size: 0.8em;
+      width: 15em;
+      margin-left: 0.5em;
+      color: $color-primary;
+    }
+  }
+
+  &__LastUl{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    position: relative;
+    top: 16px;
+  }
+  &__AppContainerImages{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2em;
+    margin-top: 2em;
+    img{
+      margin-right: 2em;
+      cursor: pointer;
+    }
+  }
+  @media (max-width: 1024px){
+    &__Container{
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  @media (max-width: 768px){
+    &__ContainerSubItem{
+      text-align: center;
+      align-items: center;
+    }
+    &__ContainerSubItemIconsPrettier{
+      margin: 0;
+    }
+    &__AppContainerImages{
+      img{
+        margin-right: 1em;
+        height: 3em;
+      }
+    }
+  }
+  
+  @media (max-width:425px){
+    &__AppContainerImages{
+      flex-direction: column;
+      align-items: center;
+      img{
+        height: 3em;
+        width: 10em;
+        display: flex;
+      }
+    }
+    &__ContainerSubItem{
+      margin-right: 0;
+    }
+  }
+}
+
+li{
+  list-style: none;
+  padding: 0.5em 0px;
+  font-family: "SemiBoldOblique";
+  color: $color-primary;
+  font-size:1em;
+  font-weight: normal;
+  cursor: pointer;
+}
